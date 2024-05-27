@@ -637,11 +637,22 @@ span{
     background-color: var(--main-color);
     padding: 30px;
     border-radius: 1em;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: 0.3s ease-in-out;
+    min-width: fit-content;
 }
 .timeline-content:hover{
-    transform: scale(1.05);
+    background: white;
+    color: var(--main-color) !important;
+    transform:scale(1.03);
+}
+
+.timeline-content:hover h3{
+    color: var(--main-color);
+}
+
+.timeline-content:hover p{
+    color: var(--main-color);
 }
 
 .timeline-content h3{
@@ -660,6 +671,25 @@ span{
     line-height: 22px;
 }
 
+@media(max-width:955px){
+    .timeline-items::before{
+        left:7px;
+    }
+
+    .timeline-item:nth-child(odd){
+        padding: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even){
+        padding-left: 37px;
+    }
+
+    .timeline-dot{
+        left:0;
+    }
+}
 
 
 
