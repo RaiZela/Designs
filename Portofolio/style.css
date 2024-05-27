@@ -140,4 +140,265 @@ span{
     margin-top:1.5rem;
     line-height: 1;
 }
+.social-icons a{
+    display:inline-flex;
+    justify-content:center;
+    align-items: center;
+    width:4.5rem;
+    height:4.5rem;
+    background: transparent;
+    border:0.2rem solid var(--main-color);
+    font-size:2.5rem;
+    border-radius: 50%;
+    color:var(--main-color);
+    margin:3rem 1.5rem 3rem 0;
+}
+
+.social-icons a:hover{
+    color:white;
+    transform:scale(2.3)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+
+.home-content p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 1000;
+}
+
+.btn{
+    display:inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color:white;
+    border:2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight:600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.text-animation{
+    font-size:34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span{
+    position: relative;
+}
+
+.text-animation span::before{
+    content:'Web Developer';
+    color:var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after{
+    content: '';
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100%+8px);
+    height:100%;
+    border-left: 3px solid var(--bg-color);
+    right:-8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14)infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words{
+    0%,
+    20%{
+        content:'Web Developer';
+    }
+    21%,
+    40%{
+        content: 'Graphic Designer';
+    }
+    41%,
+    60%{
+        content: 'UI / UX Designer';
+    }
+    61%,
+    80%{
+        content: 'Content Manager';
+    }
+    81%,
+    100%{
+        content:'Software Tester';
+    }
+}
+
+@keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width:0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+}
+
+.about{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:10rem;
+    background: var(--second-bg-color);
+    color: white;
+}
+
+.about h2 span{
+    color:var(--main-color);
+    text-shadow: 0 0 50px var(--main-color);
+}
+
+.about-img{
+    border-radius: 50%;
+}
+
+.about-img img{
+    position:relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color); 
+    top: 1rem;
+    cursor: pointer;
+    transition:0.4s ease-in-out;
+}
+
+.about-img img:hover{
+    box-shadow: 0 0 50px var(--main-color),
+                0 0 100px var(--main-color); 
+}
+
+.heading{
+    text-align: center;
+    font-size: 8rem;
+}
+
+.about-content h2{
+    text-align:left;
+    line-height: 1.5;
+}
+
+.about-content h3{
+    font-size: 2.6rem;
+}
+
+.about-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.about-content .text-animation span::before{
+    content: 'Web Developer';
+    color:var(--main-color);
+    animation: words 20s infinite;
+}
+
+.about-content .text-animation span::after{
+    content:'';
+    background-color: var(--second-bg-color);
+    position:absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--second-bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite,typing 20s steps(14)infinite;
+}
+
+::-webkit-scrollbar{
+    width:15px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    width: 50px;
+}
+
+.services{
+    background: var(--bg-color);
+    color:white;
+}
+
+.services h2{
+    margin-bottom:5rem;
+    color:white;
+}
+
+.services-container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items:center;
+    gap:2rem;
+}
+
+.service-box{
+    background-color: var(--main-color);
+    height:250px;
+    border-radius:3rem;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.service-box:hover{
+    background:white;
+    color:var(--main-color);
+    transform:scale(1.03);
+}
+
+.service-box .service-info{
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    max-height:200px;
+    justify-content: center;
+    align-items:baseline;
+    padding:5em;
+}
+
+.service-box .service-info h4{
+    font-size: 1.6rem;
+    font-weight:400;
+    max-height:100px;
+    margin: auto;
+}
+
+.service-box .service-info p{
+    font-size:1.6rem;
+    font-weight:400;
+    max-height: 100px;
+    margin:auto;
+}
 
