@@ -694,3 +694,30 @@ span{
 
 
 
+.container{
+    /* display: flex;
+    justify-content: center;
+    align-items:center; */
+    min-height: 100vh;
+    background: #222;
+}
+
+.container .skills-container{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:40px;
+}
+
+.skills-container .card{
+    position: relative;
+    width: 220px;
+    height: 250px;
+    background: #2a2a2a;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
