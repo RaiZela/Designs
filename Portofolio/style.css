@@ -222,23 +222,23 @@ span{
 @keyframes words{
     0%,
     20%{
-        content:'Web Developer';
+        content:'.NET Developer';
     }
     21%,
     40%{
-        content: 'Graphic Designer';
+        content: 'Web Developer';
     }
     41%,
     60%{
-        content: 'UI / UX Designer';
+        content:'Wordpress Developer';
     }
     61%,
     80%{
-        content: 'Content Manager';
+        content: 'Freelancer';
     }
     81%,
     100%{
-        content:'Software Tester';
+        content: 'Software Designer';
     }
 }
 
@@ -319,6 +319,7 @@ span{
 .about-content p{
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+    text-indent: 0.5em;
 }
 
 .about-content .text-animation span::before{
@@ -821,4 +822,28 @@ span{
     letter-spacing: 2px;
     text-transform: uppercase;
     color:rgba(255,255,255,0.75);
+}
+
+.tech{
+    justify-content: flex-start;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:12px;
+}
+
+.tech span{
+    font-weight:300;
+    font-size:1em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color:rgba(255,255,255,0.75);
+}
+
+
+#skills{
+    height: fit-content !important;
 }

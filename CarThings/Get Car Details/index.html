@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Model Details</title>
+    <style>
+        .car-details {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Car Model Details</h1>
+    <input type="text" id="car-model-id" placeholder="Enter car model ID">
+    <button onclick="getCarDetails()">Get Details</button>
+
+    <div id="car-details"></div>
+
+    <script>
+        function getCarDetails() {
+            const modelId = document.getElementById('car-model-id').value;
+            $.ajax({
+                url: `https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModel&model=${modelId}`,
+                dataType: "jsonp",
+                success: function(data) {
+                    const detailsContainer = document.getElementById('car-details');
+                    detailsContainer.innerHTML = '';
+                    if (data && data[0]) {
+                        const car = data[0];
+                        const carDiv = document.createElement('div');
+                        carDiv.className = 'car-details';
+                        carDiv.innerHTML = `
+                            <h2>${car.model_name}</h2>
+                            <p>Make: ${car.make_display}</p>
+                            <p>Year: ${car.model_year}</p>
+                            <p>Body Style: ${car.model_body}</p>
+                            <p>Engine Capacity: ${car.model_engine_capacity || 'N/A'}</p>
+                            <p>Engine Type: ${car.model_engine_type || 'N/A'}</p>
+                            <p>Transmission Type: ${car.model_transmission_type || 'N/A'}</p>
+                            <p>Fuel Type: ${car.model_fuel_type || 'N/A'}</p>
+                            <p>Drive Type: ${car.model_drive || 'N/A'}</p>
+                            <p>Seats: ${car.model_seats || 'N/A'}</p>
+                            <p>Doors: ${car.model_doors || 'N/A'}</p>
+                            <p>Weight: ${car.model_weight || 'N/A'}</p>
+                            <p>Acceleration 0-100 km/h: ${car.model_acceleration || 'N/A'}</p>
+                            <p>Top Speed: ${car.model_top_speed_kph || 'N/A'} km/h</p>
+                        `;
+                        detailsContainer.appendChild(carDiv);
+                    } else {
+                        detailsContainer.innerHTML = '<p>No details found</p>';
+                    }
+                },
+                error: function() {
+                    console.error('Error fetching car details');
+                    document.getElementById('car-details').innerHTML = '<p>Error fetching car details</p>';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
